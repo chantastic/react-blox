@@ -1,6 +1,6 @@
 # react-blox
 
-Reusable, transportable components with style props.
+Reusable, transportable components with box-model style props.
 
 ## Don't use this
 
@@ -22,7 +22,15 @@ $ npm i -D react-blox
 import { Box } from "react-blox"
 
 const SomethingLikeADropdown = prop => (
-  <Box>
+  <Box
+    border="1px solid blue"
+    margin="1rem"
+    padding="1rem"
+    minWidth="100px"
+    maxWidth="300px"
+    overflow="hidden"
+    overflowY="auto"
+  >
     This is a block.
   </Box>
 )
@@ -38,10 +46,20 @@ const SomethingLikeADropdown = prop => (
 
 *Use as needed*
 ```
-var Relative = ReactBlox.Relative;
+var Box = ReactBlox.Box;
+
+var style = {
+  border: "1px solid blue"
+  margin: "1rem"
+  padding: "1rem"
+  minWidth: "100px"
+  maxWidth: "300px"
+  overflow: "hidden"
+  overflowY: "auto"
+}
 
 ReactDOM.render(
-  React.createElement(Relative, null, "This is a block"),
+  React.createElement(Box, style, "This is a block"),
   mountNode
 )
 ```
