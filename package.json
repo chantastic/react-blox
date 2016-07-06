@@ -1,7 +1,7 @@
 {
   "name": "react-blox",
   "version": "0.0.2",
-  "description": "Reusable, transportable components with style props.",
+  "description": "Reusable, transportable components with box-model style props.",
   "main": "lib/index.js",
   "dependencies": {},
   "devDependencies": {
