@@ -76,19 +76,78 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var elementStyles = function elementStyles(applied) {
-	  return _extends({
-	    display: "block"
-	  }, applied);
-	};
-
 	var Box = function Box(_ref) {
+	  var boxSizing = _ref.boxSizing;
+	  var boxShadow = _ref.boxShadow;
+	  var border = _ref.border;
+	  var borderTop = _ref.borderTop;
+	  var borderRight = _ref.borderRight;
+	  var borderBottom = _ref.borderBottom;
+	  var borderLeft = _ref.borderLeft;
+	  var height = _ref.height;
+	  var margin = _ref.margin;
+	  var marginTop = _ref.marginTop;
+	  var marginRight = _ref.marginRight;
+	  var marginBottom = _ref.marginBottom;
+	  var marginLeft = _ref.marginLeft;
+	  var maxHeight = _ref.maxHeight;
+	  var maxWidth = _ref.maxWidth;
+	  var minHeight = _ref.minHeight;
+	  var minWidth = _ref.minWidth;
+	  var outline = _ref.outline;
+	  var overflow = _ref.overflow;
+	  var overflowX = _ref.overflowX;
+	  var overflowY = _ref.overflowY;
+	  var padding = _ref.padding;
+	  var paddingTop = _ref.paddingTop;
+	  var paddingRight = _ref.paddingRight;
+	  var paddingBottom = _ref.paddingBottom;
+	  var paddingLeft = _ref.paddingLeft;
+	  var visibility = _ref.visibility;
+	  var width = _ref.width;
 	  var style = _ref.style;
 
-	  var props = _objectWithoutProperties(_ref, ["style"]);
+	  var props = _objectWithoutProperties(_ref, ["boxSizing", "boxShadow", "border", "borderTop", "borderRight", "borderBottom", "borderLeft", "height", "margin", "marginTop", "marginRight", "marginBottom", "marginLeft", "maxHeight", "maxWidth", "minHeight", "minWidth", "outline", "overflow", "overflowX", "overflowY", "padding", "paddingTop", "paddingRight", "paddingBottom", "paddingLeft", "visibility", "width", "style"]);
 
 	  return _react2.default.createElement("div", _extends({}, props, {
-	    style: elementStyles(style)
+	    style: _extends({}, style, {
+
+	      /* borders are niave right now. it's complicated */
+	      borderTop: borderTop || border,
+	      borderRight: borderRight || border,
+	      borderBottom: borderBottom || border,
+	      borderLeft: borderLeft || border,
+
+	      boxSizing: boxSizing,
+	      boxShadow: boxShadow,
+
+	      height: height,
+
+	      marginTop: marginTop || margin,
+	      marginRight: marginRight || margin,
+	      marginBottom: marginBottom || margin,
+	      marginLeft: marginLeft || margin,
+
+	      maxHeight: maxHeight,
+	      maxWidth: maxWidth,
+
+	      minHeight: minHeight,
+	      minWidth: minWidth,
+
+	      outline: outline,
+
+	      overflowX: overflowX || overflow,
+	      overflowY: overflowY || overflow,
+
+	      paddingTop: paddingTop || padding,
+	      paddingRight: paddingRight || padding,
+	      paddingBottom: paddingBottom || padding,
+	      paddingLeft: paddingLeft || padding,
+
+	      visibility: visibility,
+
+	      width: width
+	    })
 	  }));
 	};
 
